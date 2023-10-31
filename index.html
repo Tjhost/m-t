@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-image: url("Images/images.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animated-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: fillText 3s forwards;
+  }
+
+  @keyframes fillText {
+    0% {
+      background-size: 0% 100%;
+    }
+    100% {
+      background-size: 100% 100%;
+      color: transparent;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="animated-text">*%@*#%#*%$$&&</div>
+
+  <script>
+    // Change the text after animation
+    setTimeout(function() {
+      document.querySelector('.animated-text').textContent = "Trenten and Marshall";
+    }, 3000); // Change text after 3 seconds
+  </script>
+</body>
+</html>
 
