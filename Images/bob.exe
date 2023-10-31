@@ -1,0 +1,28 @@
+import os
+from distutils.core import setup
+import py2exe
+
+# Python script to display "hi"
+script_content = """
+print("hi")
+input("Press Enter to exit...")
+"""
+
+# Create the hi.py script
+with open("hi.py", "w") as hi_file:
+    hi_file.write(script_content)
+
+# Setup information for compiling into an .exe
+setup(console=["hi.py"])
+
+# Build the .exe
+os.system("python setup.py py2exe")
+
+# Clean up the generated files
+os.remove("hi.py")
+os.remove("setup.py")
+os.rmdir("build")
+os.rmdir("dist")
+os.rmdir("__pycache__")
+
+print("Compilation complete. You can find 'hi.exe' in the 'dist' folder.")
